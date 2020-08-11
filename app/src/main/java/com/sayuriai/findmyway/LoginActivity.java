@@ -170,7 +170,7 @@ public class LoginActivity extends AppCompatActivity {
         } else if (TextUtils.isEmpty (password)) {
             Toast.makeText (LoginActivity.this, "Please type your password...", Toast.LENGTH_SHORT).show ();
         } else {
-            hideKeyboard(activity);
+            hideKeyboard(this);
             loadingBar.setTitle ("Login");
             loadingBar.setMessage ("Logging in...");
             loadingBar.setCanceledOnTouchOutside (true);
