@@ -1,11 +1,14 @@
 package com.sayuriai.findmyway;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ShareActionProvider;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,9 +16,13 @@ import android.view.MenuItem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
+    private Toolbar mToolbar;
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
            finish();
        }
        else{
+           mToolbar = (Toolbar) findViewById ( R.id.toolbar );
+           setSupportActionBar ( mToolbar );
+           getSupportActionBar().setDisplayHomeAsUpEnabled ( true );
+           getSupportActionBar ().setDisplayShowHomeEnabled(true);
 
        }
 
