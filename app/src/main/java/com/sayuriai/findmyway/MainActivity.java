@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
        else{
            mToolbar = (Toolbar) findViewById ( R.id.toolbar );
            setSupportActionBar ( mToolbar );
-           getSupportActionBar().setDisplayHomeAsUpEnabled ( true );
-           getSupportActionBar ().setDisplayShowHomeEnabled(true);
+//           getSupportActionBar().setDisplayHomeAsUpEnabled ( true );
+//           getSupportActionBar ().setDisplayShowHomeEnabled(true);
            Mapbox.getInstance( this, getString(R.string.access_token));
            mapView = findViewById(R.id.mapView);
            startButton = findViewById(R.id.startButton);
